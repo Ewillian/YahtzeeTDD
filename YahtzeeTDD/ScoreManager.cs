@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace YahtzeeTDD
 {
@@ -12,17 +13,7 @@ namespace YahtzeeTDD
 
         public int Ones()
         {
-            var score = 0;
-
-            foreach (var value in DicesValues)
-            {
-                if (value == 1)
-                {
-                    score += 1;
-                }
-            }
-
-            return score;
+            return DicesValues.Count(value => value == 1);
         }
     }
 }
