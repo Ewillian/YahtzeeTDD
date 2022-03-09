@@ -190,7 +190,7 @@ namespace YahtzeeTDD.Tests
 
         #endregion FoursTest
 
-        #region FoursTest
+        #region FivesTest
 
         [Fact]
         public void Should_Add_Fives_Score_Once()
@@ -220,6 +220,20 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(10, actual);
         }
 
-        #endregion FoursTest
+        [Fact]
+        public void Should_Not_Add_Fives_Score()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 2, 1, 6, 6, 4 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Fives();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
+        #endregion FivesTest
     }
 }
