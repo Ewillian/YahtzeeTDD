@@ -174,6 +174,20 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(8, actual);
         }
 
+        [Fact]
+        public void Should_Not_Add_Fours_Score()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 2, 1, 6, 6, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Fours();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion FoursTest
     }
 }
