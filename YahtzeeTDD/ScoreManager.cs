@@ -34,17 +34,7 @@ namespace YahtzeeTDD
 
         public object Fives()
         {
-            var score = 0;
-
-            foreach (var value in DicesValues)
-            {
-                if (value == 5)
-                {
-                    score += 5;
-                }
-            }
-
-            return score;
+            return DicesValues.Where(value => value == 5).Sum(value => 5);
         }
     }
 }
