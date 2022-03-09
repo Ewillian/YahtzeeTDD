@@ -189,5 +189,23 @@ namespace YahtzeeTDD.Tests
         }
 
         #endregion FoursTest
+
+        #region FoursTest
+
+        [Fact]
+        public void Should_Add_Fives_Score_Once()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 1, 2, 3, 4, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Fives();
+
+            // Assert
+            Assert.Equal(5, actual);
+        }
+
+        #endregion FoursTest
     }
 }

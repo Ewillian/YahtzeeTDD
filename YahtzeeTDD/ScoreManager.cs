@@ -31,5 +31,10 @@ namespace YahtzeeTDD
         {
             return DicesValues.Where(value => value == 4).Sum(value => 4);
         }
+
+        public object Fives()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
