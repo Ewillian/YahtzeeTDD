@@ -34,7 +34,17 @@ namespace YahtzeeTDD
 
         public object Fives()
         {
-            return 5;
+            var score = 0;
+
+            foreach (var value in DicesValues)
+            {
+                if (value == 5)
+                {
+                    score += 5;
+                }
+            }
+
+            return score;
         }
     }
 }

@@ -206,6 +206,20 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(5, actual);
         }
 
+        [Fact]
+        public void Should_Add_Fives_Score_MultipleTimes()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 5, 3, 4, 3, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Fives();
+
+            // Assert
+            Assert.Equal(10, actual);
+        }
+
         #endregion FoursTest
     }
 }
