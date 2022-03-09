@@ -23,7 +23,7 @@ namespace YahtzeeTDD
 
         public int Threes()
         {
-            throw new System.NotImplementedException();
+            return 3;
         }
     }
 }
