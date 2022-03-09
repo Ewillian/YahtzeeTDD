@@ -128,6 +128,6 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(9, actual);
         }
 
-        #endregion TwosTest
+        #endregion ThreesTest
     }
 }
