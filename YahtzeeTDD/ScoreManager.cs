@@ -39,7 +39,17 @@ namespace YahtzeeTDD
 
         public int Sixes()
         {
-            return 6;
+            var score = 0;
+
+            foreach (var value in DicesValues)
+            {
+                if (value == 6)
+                {
+                    score += 6;
+                }
+            }
+
+            return score;
         }
     }
 }
