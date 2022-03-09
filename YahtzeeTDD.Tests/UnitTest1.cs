@@ -6,6 +6,8 @@ namespace YahtzeeTDD.Tests
 {
     public class ScoreManagerTest
     {
+        #region OnesTest
+
         [Fact]
         public void Should_Add_Ones_Score_Once()
         {
@@ -48,6 +50,10 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(0, actual);
         }
 
+        #endregion OnesTest
+
+        #region TwosTest
+
         [Fact]
         public void Should_Add_Twos_Score_Once()
         {
@@ -89,5 +95,25 @@ namespace YahtzeeTDD.Tests
             // Assert
             Assert.Equal(0, actual);
         }
+
+        #endregion TwosTest
+
+        #region ThreesTest
+
+        [Fact]
+        public void Should_Add_Threes_Score_Once()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 1, 2, 3, 4, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Threes();
+
+            // Assert
+            Assert.Equal(3, actual);
+        }
+
+        #endregion TwosTest
     }
 }

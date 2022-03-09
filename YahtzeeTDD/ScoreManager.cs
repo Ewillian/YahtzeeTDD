@@ -20,5 +20,10 @@ namespace YahtzeeTDD
         {
             return DicesValues.Where(value => value == 2).Sum(value => 2);
         }
+
+        public int Threes()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
