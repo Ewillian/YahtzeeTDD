@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace YahtzeeTDD
@@ -24,6 +25,11 @@ namespace YahtzeeTDD
         public int Threes()
         {
             return DicesValues.Where(value => value == 3).Sum(value => 3);
+        }
+
+        public object Fours()
+        {
+            throw new NotImplementedException();
         }
     }
 }
