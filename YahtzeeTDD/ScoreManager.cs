@@ -15,5 +15,10 @@ namespace YahtzeeTDD
         {
             return DicesValues.Count(value => value == 1);
         }
+
+        public int Twos()
+        {
+            return 0;
+        }
     }
 }

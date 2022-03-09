@@ -47,5 +47,19 @@ namespace YahtzeeTDD.Tests
             // Assert
             Assert.Equal(0, actual);
         }
+
+        [Fact]
+        public void Should_Add_Twos_Score_Once()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 1, 2, 3, 4, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Twos();
+
+            // Assert
+            Assert.Equal(2, actual);
+        }
     }
 }
