@@ -128,6 +128,20 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(9, actual);
         }
 
+        [Fact]
+        public void Should_Not_Add_Threes_Score()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 2, 1, 4, 6, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Threes();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion ThreesTest
     }
 }
