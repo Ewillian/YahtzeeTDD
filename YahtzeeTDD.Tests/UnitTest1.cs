@@ -235,5 +235,23 @@ namespace YahtzeeTDD.Tests
         }
 
         #endregion FivesTest
+
+        #region SixesTest
+
+        [Fact]
+        public void Should_Add_Sixes_Score_Once()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 6, 2, 3, 4, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Sixes();
+
+            // Assert
+            Assert.Equal(6, actual);
+        }
+
+        #endregion SixesTest
     }
 }
