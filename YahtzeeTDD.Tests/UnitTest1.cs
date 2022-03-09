@@ -33,5 +33,19 @@ namespace YahtzeeTDD.Tests
             // Assert
             Assert.Equal(3, actual);
         }
+
+        [Fact]
+        public void Should_Not_Add_Ones_Score()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 3, 2, 4, 3, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Ones();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
     }
 }
