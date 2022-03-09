@@ -29,17 +29,7 @@ namespace YahtzeeTDD
 
         public object Fours()
         {
-            var score = 0;
-
-            foreach (var value in DicesValues)
-            {
-                if (value == 4)
-                {
-                    score += 4;
-                }
-            }
-
-            return score;
+            return DicesValues.Where(value => value == 4).Sum(value => 4);
         }
     }
 }
