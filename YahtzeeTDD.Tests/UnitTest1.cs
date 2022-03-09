@@ -266,6 +266,20 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(12, actual);
         }
 
+        [Fact]
+        public void Should_Not_Add_Sixes_Score()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 1, 2, 3, 4, 4 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Sixes();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion SixesTest
     }
 }
