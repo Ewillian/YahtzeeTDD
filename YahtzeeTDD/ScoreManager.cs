@@ -18,7 +18,17 @@ namespace YahtzeeTDD
 
         public int Twos()
         {
-            return 2;
+            var score = 0;
+
+            foreach (var value in DicesValues)
+            {
+                if (value == 2)
+                {
+                    score += 2;
+                }
+            }
+
+            return score;
         }
     }
 }
