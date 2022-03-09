@@ -12,7 +12,7 @@ namespace YahtzeeTDD
 
         public int Ones()
         {
-            return 0;
+            return 1;
         }
     }
 }
