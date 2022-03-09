@@ -12,7 +12,17 @@ namespace YahtzeeTDD
 
         public int Ones()
         {
-            return 1;
+            var score = 0;
+
+            foreach (var value in DicesValues)
+            {
+                if (value == 1)
+                {
+                    score += 1;
+                }
+            }
+
+            return score;
         }
     }
 }
