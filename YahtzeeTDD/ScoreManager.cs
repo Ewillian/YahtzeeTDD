@@ -29,7 +29,17 @@ namespace YahtzeeTDD
 
         public object Fours()
         {
-            return 4;
+            var score = 0;
+
+            foreach (var value in DicesValues)
+            {
+                if (value == 4)
+                {
+                    score += 4;
+                }
+            }
+
+            return score;
         }
     }
 }
