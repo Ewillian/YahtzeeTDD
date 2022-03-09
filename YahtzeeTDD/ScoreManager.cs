@@ -29,7 +29,7 @@ namespace YahtzeeTDD
 
         public object Fours()
         {
-            throw new NotImplementedException();
+            return 4;
         }
     }
 }
