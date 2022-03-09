@@ -39,7 +39,7 @@ namespace YahtzeeTDD
 
         public int Sixes()
         {
-            throw new NotImplementedException();
+            return 6;
         }
     }
 }
