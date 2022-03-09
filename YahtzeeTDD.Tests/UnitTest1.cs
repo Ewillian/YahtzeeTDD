@@ -61,5 +61,19 @@ namespace YahtzeeTDD.Tests
             // Assert
             Assert.Equal(2, actual);
         }
+
+        [Fact]
+        public void Should_Add_Twos_Score_MultipleTimes()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 1, 2, 1, 2, 5 };
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Twos();
+
+            // Assert
+            Assert.Equal(4, actual);
+        }
     }
 }
