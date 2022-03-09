@@ -18,7 +18,7 @@ namespace YahtzeeTDD
 
         public int Twos()
         {
-            return 0;
+            return 2;
         }
     }
 }
