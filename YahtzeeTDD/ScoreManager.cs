@@ -23,17 +23,7 @@ namespace YahtzeeTDD
 
         public int Threes()
         {
-            var score = 0;
-
-            foreach (var value in DicesValues)
-            {
-                if (value == 3)
-                {
-                    score += 3;
-                }
-            }
-
-            return score;
+            return DicesValues.Where(value => value == 3).Sum(value => 3);
         }
     }
 }
