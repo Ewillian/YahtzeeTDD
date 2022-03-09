@@ -18,17 +18,7 @@ namespace YahtzeeTDD
 
         public int Twos()
         {
-            var score = 0;
-
-            foreach (var value in DicesValues)
-            {
-                if (value == 2)
-                {
-                    score += 2;
-                }
-            }
-
-            return score;
+            return DicesValues.Where(value => value == 2).Sum(value => 2);
         }
     }
 }
