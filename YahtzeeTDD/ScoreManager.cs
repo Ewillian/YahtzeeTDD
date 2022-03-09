@@ -39,17 +39,7 @@ namespace YahtzeeTDD
 
         public int Sixes()
         {
-            var score = 0;
-
-            foreach (var value in DicesValues)
-            {
-                if (value == 6)
-                {
-                    score += 6;
-                }
-            }
-
-            return score;
+            return DicesValues.Where(value => value == 6).Sum(value => 6);
         }
     }
 }
