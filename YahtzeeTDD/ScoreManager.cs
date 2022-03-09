@@ -34,7 +34,7 @@ namespace YahtzeeTDD
 
         public object Fives()
         {
-            throw new NotImplementedException();
+            return 5;
         }
     }
 }
