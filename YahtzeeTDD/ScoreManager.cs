@@ -20,9 +20,9 @@ namespace YahtzeeTDD
 
         public int ThreeOfAKind()
         {
-            for (int i = 1; i < 7; i++)
+            for (var i = 1; i < 7; i++)
             {
-                int count = DicesValues.Where(temp => temp.Equals(i))
+                var count = DicesValues.Where(temp => temp.Equals(i))
                     .Select(temp => temp)
                     .Count();
 
