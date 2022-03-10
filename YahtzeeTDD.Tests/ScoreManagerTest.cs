@@ -230,6 +230,94 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(expected, actual);
         }
 
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(2, 3, 4)]
+        [InlineData(3, 4, 5)]
+        [InlineData(4, 5, 6)]
+        [InlineData(5, 6, 1)]
+        [InlineData(6, 1, 2)]
+        public void Should_Not_Add_One_Value_Four_Of_A_Kind(int repeatedValue, int firstFillValue, int secondFillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { firstFillValue, repeatedValue, firstFillValue, secondFillValue, secondFillValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.OfAKind(4);
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(2, 3, 4)]
+        [InlineData(3, 4, 5)]
+        [InlineData(4, 5, 6)]
+        [InlineData(5, 6, 1)]
+        [InlineData(6, 1, 2)]
+        public void Should_Not_Add_Two_Values_Four_Of_A_Kind(int repeatedValue, int firstFillValue, int secondFillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { firstFillValue, repeatedValue, firstFillValue, repeatedValue, secondFillValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.OfAKind(4);
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(2, 3, 4)]
+        [InlineData(3, 4, 5)]
+        [InlineData(4, 5, 6)]
+        [InlineData(5, 6, 1)]
+        [InlineData(6, 1, 2)]
+        public void Should_Not_Add_Three_Values_Four_Of_A_Kind(int repeatedValue, int firstFillValue, int secondFillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { firstFillValue, repeatedValue, repeatedValue, repeatedValue, secondFillValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.OfAKind(4);
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion FourOfAKind
+
+        #region FullHouse
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(3, 4)]
+        [InlineData(4, 5)]
+        [InlineData(5, 6)]
+        [InlineData(6, 1)]
+        public void Should_Add_Values_Full_House(int firstFillValue, int secondFillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { firstFillValue, secondFillValue, firstFillValue, secondFillValue, secondFillValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.FullHouse();
+
+            // Assert
+            Assert.Equal(25, actual);
+        }
+
+        #endregion FullHouse
     }
 }
