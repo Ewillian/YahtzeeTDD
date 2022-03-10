@@ -90,7 +90,7 @@ namespace YahtzeeTDD.Tests
             var scoreManager = new ScoreManager(dicesValues);
 
             // Act
-            var actual = scoreManager.ThreeOfAKind();
+            var actual = scoreManager.OfAKind(3);
 
             // Assert
             Assert.Equal(expected, actual);
@@ -112,7 +112,7 @@ namespace YahtzeeTDD.Tests
             var scoreManager = new ScoreManager(dicesValues);
 
             // Act
-            var actual = scoreManager.ThreeOfAKind();
+            var actual = scoreManager.OfAKind(3);
 
             // Assert
             Assert.Equal(expected, actual);
@@ -134,7 +134,7 @@ namespace YahtzeeTDD.Tests
             var scoreManager = new ScoreManager(dicesValues);
 
             // Act
-            var actual = scoreManager.ThreeOfAKind();
+            var actual = scoreManager.OfAKind(3);
 
             // Assert
             Assert.Equal(expected, actual);
@@ -155,7 +155,7 @@ namespace YahtzeeTDD.Tests
             var scoreManager = new ScoreManager(dicesValues);
 
             // Act
-            var actual = scoreManager.ThreeOfAKind();
+            var actual = scoreManager.OfAKind(3);
 
             // Assert
             Assert.Equal(0, actual);
@@ -176,7 +176,7 @@ namespace YahtzeeTDD.Tests
             var scoreManager = new ScoreManager(dicesValues);
 
             // Act
-            var actual = scoreManager.ThreeOfAKind();
+            var actual = scoreManager.OfAKind(3);
 
             // Assert
             Assert.Equal(0, actual);
@@ -202,7 +202,7 @@ namespace YahtzeeTDD.Tests
             var scoreManager = new ScoreManager(dicesValues);
 
             // Act
-            var actual = scoreManager.FourOfAKind();
+            var actual = scoreManager.OfAKind(4);
 
             // Assert
             Assert.Equal(expected, actual);

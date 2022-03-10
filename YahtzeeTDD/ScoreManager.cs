@@ -18,7 +18,7 @@ namespace YahtzeeTDD
             return DicesValues.Where(value => value == targetValue).Sum(value => targetValue);
         }
 
-        public int ThreeOfAKind()
+        public int OfAKind(int ofAKindNumber)
         {
             for (var i = 1; i < 7; i++)
             {
@@ -26,30 +26,13 @@ namespace YahtzeeTDD
                     .Select(temp => temp)
                     .Count();
 
-                if (count >= 3)
+                if (count >= ofAKindNumber)
                 {
                     return DicesValues.Sum();
                 }
             }
 
             return 0;
-        }
-
-        public int FourOfAKind()
-        {
-            for (var i = 1; i < 7; i++)
-            {
-                var count = DicesValues.Where(temp => temp.Equals(i))
-                    .Select(temp => temp)
-                    .Count();
-
-                if (count == 4)
-                {
-                    return DicesValues.Sum();
-                }
-            }
-
-            throw new NotImplementedException();
         }
     }
 }
