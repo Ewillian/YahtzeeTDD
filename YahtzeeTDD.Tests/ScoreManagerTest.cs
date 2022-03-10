@@ -208,6 +208,28 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(expected, actual);
         }
 
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        [InlineData(5)]
+        [InlineData(6)]
+        public void Should_Add_Five_Values_Four_Of_A_Kind(int repeatedValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { repeatedValue, repeatedValue, repeatedValue, repeatedValue, repeatedValue };
+            var expected = dicesValues.Sum();
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.OfAKind(4);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
         #endregion FourOfAKind
     }
 }
