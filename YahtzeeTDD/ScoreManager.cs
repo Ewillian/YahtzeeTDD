@@ -32,7 +32,7 @@ namespace YahtzeeTDD
                 }
             }
 
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
