@@ -318,6 +318,27 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(25, actual);
         }
 
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(2, 3, 4)]
+        [InlineData(3, 4, 5)]
+        [InlineData(4, 5, 6)]
+        [InlineData(5, 6, 1)]
+        [InlineData(6, 1, 2)]
+        public void Should_Not_Pair_Add_Values_Full_House(int pairValue, int threeOfAKindValue, int fillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { pairValue, threeOfAKindValue, fillValue, threeOfAKindValue, threeOfAKindValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.FullHouse();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion FullHouse
     }
 }
