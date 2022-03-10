@@ -34,5 +34,10 @@ namespace YahtzeeTDD
 
             return 0;
         }
+
+        public int FourOfAKind()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

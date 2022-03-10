@@ -183,5 +183,31 @@ namespace YahtzeeTDD.Tests
         }
 
         #endregion ThreeOfAKind
+
+        #region FourOfAKind
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(3, 4)]
+        [InlineData(4, 5)]
+        [InlineData(5, 6)]
+        [InlineData(6, 1)]
+        public void Should_Add_Four_Values_Four_Of_A_Kind(int repeatedValue, int fillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { repeatedValue, repeatedValue, repeatedValue, repeatedValue, fillValue };
+            var expected = dicesValues.Sum();
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.FourOfAKind();
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        #endregion FourOfAKind
     }
 }
