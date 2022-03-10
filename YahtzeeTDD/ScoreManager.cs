@@ -20,6 +20,18 @@ namespace YahtzeeTDD
 
         public int ThreeOfAKind()
         {
+            for (int i = 1; i < 7; i++)
+            {
+                int count = DicesValues.Where(temp => temp.Equals(i))
+                    .Select(temp => temp)
+                    .Count();
+
+                if (count == 3)
+                {
+                    return DicesValues.Sum();
+                }
+            }
+
             throw new NotImplementedException();
         }
     }
