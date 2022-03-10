@@ -37,7 +37,7 @@ namespace YahtzeeTDD
 
         public int FullHouse()
         {
-            throw new NotImplementedException();
+            return 25;
         }
     }
 }
