@@ -304,10 +304,10 @@ namespace YahtzeeTDD.Tests
         [InlineData(4, 5)]
         [InlineData(5, 6)]
         [InlineData(6, 1)]
-        public void Should_Add_Values_Full_House(int firstFillValue, int secondFillValue)
+        public void Should_Add_Values_Full_House(int pairValue, int threeOfAKindValue)
         {
             // Arrange
-            var dicesValues = new List<int> { firstFillValue, secondFillValue, firstFillValue, secondFillValue, secondFillValue };
+            var dicesValues = new List<int> { pairValue, threeOfAKindValue, pairValue, threeOfAKindValue, threeOfAKindValue };
 
             var scoreManager = new ScoreManager(dicesValues);
 
