@@ -26,7 +26,7 @@ namespace YahtzeeTDD
                     .Select(temp => temp)
                     .Count();
 
-                if (count == 3)
+                if (count >= 3)
                 {
                     return DicesValues.Sum();
                 }
