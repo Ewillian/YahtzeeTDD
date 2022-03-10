@@ -37,6 +37,18 @@ namespace YahtzeeTDD
 
         public int FourOfAKind()
         {
+            for (var i = 1; i < 7; i++)
+            {
+                var count = DicesValues.Where(temp => temp.Equals(i))
+                    .Select(temp => temp)
+                    .Count();
+
+                if (count == 4)
+                {
+                    return DicesValues.Sum();
+                }
+            }
+
             throw new NotImplementedException();
         }
     }
