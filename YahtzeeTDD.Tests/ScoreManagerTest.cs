@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using System.Linq;
 using Xunit;
 
 namespace YahtzeeTDD.Tests
@@ -71,5 +71,31 @@ namespace YahtzeeTDD.Tests
         }
 
         #endregion MinorTypeTest
+
+        #region ThreeOfAKind
+
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(2, 3, 4)]
+        [InlineData(3, 4, 5)]
+        [InlineData(4, 5, 6)]
+        [InlineData(5, 6, 1)]
+        [InlineData(6, 1, 2)]
+        public void Should_Add_Values_Three_Of_A_Kind(int repeatedValue, int firstFillValue, int secondFillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { repeatedValue, repeatedValue, firstFillValue, repeatedValue, secondFillValue };
+            var expected = dicesValues.Sum();
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.ThreeOfAKind();
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        #endregion ThreeOfAKind
     }
 }

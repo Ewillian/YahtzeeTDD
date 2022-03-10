@@ -17,5 +17,10 @@ namespace YahtzeeTDD
         {
             return DicesValues.Where(value => value == targetValue).Sum(value => targetValue);
         }
+
+        public int ThreeOfAKind()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
