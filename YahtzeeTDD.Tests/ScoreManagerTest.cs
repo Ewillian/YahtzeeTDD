@@ -397,6 +397,21 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(30, actual);
         }
 
+        [Fact]
+        public void Should_Not_Add_Values_Small_Straight()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 2, 3, 5, 3, 5 };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.SmallStraight();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion SmallStraight
     }
 }
