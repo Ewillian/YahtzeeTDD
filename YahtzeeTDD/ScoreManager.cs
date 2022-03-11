@@ -53,7 +53,26 @@ namespace YahtzeeTDD
 
         public int SmallStraight()
         {
-            return 30;
+            var combinationList = new List<List<int>>
+            {
+                new List<int> { 1, 2, 3, 4 },
+                new List<int> { 2, 3, 4, 5 },
+                new List<int> { 3, 4, 5, 6 }
+            };
+
+            DicesValues.Sort();
+
+            foreach (var combinations in combinationList)
+            {
+                var count = combinations.Count(w => DicesValues.Contains(w));
+
+                if (count == 4)
+                {
+                    return 30;
+                }
+            }
+
+            return 0;
         }
 
         #endregion Public methods
