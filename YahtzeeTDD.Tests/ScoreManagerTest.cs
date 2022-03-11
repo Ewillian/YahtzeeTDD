@@ -318,6 +318,21 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(25, actual);
         }
 
+        [Fact]
+        public void Should_Not_Add_Values_Full_House()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 1, 2, 3, 4, 5 };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.FullHouse();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         [Theory]
         [InlineData(1, 2, 3)]
         [InlineData(2, 3, 4)]
@@ -339,6 +354,49 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(0, actual);
         }
 
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(2, 3, 4)]
+        [InlineData(3, 4, 5)]
+        [InlineData(4, 5, 6)]
+        [InlineData(5, 6, 1)]
+        [InlineData(6, 1, 2)]
+        public void Should_Not_Triple_Add_Values_Full_House(int pairValue, int threeOfAKindValue, int fillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { pairValue, fillValue, pairValue, threeOfAKindValue, threeOfAKindValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.FullHouse();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion FullHouse
+
+        #region SmallStraight
+
+        [Theory]
+        [InlineData(1, 2, 3, 4, 6)]
+        [InlineData(2, 3, 4, 5, 5)]
+        [InlineData(3, 4, 5, 6, 1)]
+        public void Should_Add_Values_Small_Straight(int firstValue, int secondValue, int thirdValue, int fourthValue, int fillValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { firstValue, secondValue, thirdValue, fourthValue, fillValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.SmallStraight();
+
+            // Assert
+            Assert.Equal(25, actual);
+        }
+
+        #endregion SmallStraight
     }
 }

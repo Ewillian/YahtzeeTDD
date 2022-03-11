@@ -8,10 +8,16 @@ namespace YahtzeeTDD
     {
         public List<int> DicesValues;
 
+        #region Constructors
+
         public ScoreManager(List<int> dicesValues)
         {
             DicesValues = dicesValues;
         }
+
+        #endregion
+
+        #region Public methods
 
         public int SumSameValues(int targetValue)
         {
@@ -45,6 +51,15 @@ namespace YahtzeeTDD
             return 0;
         }
 
+        public int SmallStraight()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion Public methods
+
+        #region Private methods
+
         private bool IsPresent(int repetitionNumber)
         {
             for (var i = 1; i < 7; i++)
@@ -61,5 +76,7 @@ namespace YahtzeeTDD
 
             return false;
         }
+
+        #endregion Private methods
     }
 }
