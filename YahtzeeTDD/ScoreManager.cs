@@ -37,39 +37,29 @@ namespace YahtzeeTDD
 
         public int FullHouse()
         {
-            var isDoublePresent = false;
-            var isThreeOfAKindPresent = false;
-
-            for (var i = 1; i < 7; i++)
-            {
-                var count = DicesValues.Where(temp => temp.Equals(i))
-                    .Select(temp => temp)
-                    .Count();
-
-                if (count == 2)
-                {
-                    isDoublePresent = true;
-                }
-            }
-
-            for (var i = 1; i < 7; i++)
-            {
-                var count = DicesValues.Where(temp => temp.Equals(i))
-                    .Select(temp => temp)
-                    .Count();
-
-                if (count == 3)
-                {
-                    isThreeOfAKindPresent = true;
-                }
-            }
-
-            if (isDoublePresent && isThreeOfAKindPresent)
+            if (IsPresent(3) && IsPresent(2))
             {
                 return 25;
             }
 
             return 0;
+        }
+
+        private bool IsPresent(int repetitionNumber)
+        {
+            for (var i = 1; i < 7; i++)
+            {
+                var count = DicesValues.Where(temp => temp.Equals(i))
+                    .Select(temp => temp)
+                    .Count();
+
+                if (count == repetitionNumber)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
