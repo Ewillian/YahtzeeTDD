@@ -394,7 +394,7 @@ namespace YahtzeeTDD.Tests
             var actual = scoreManager.SmallStraight();
 
             // Assert
-            Assert.Equal(25, actual);
+            Assert.Equal(30, actual);
         }
 
         #endregion SmallStraight

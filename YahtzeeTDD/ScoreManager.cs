@@ -53,7 +53,7 @@ namespace YahtzeeTDD
 
         public int SmallStraight()
         {
-            throw new NotImplementedException();
+            return 30;
         }
 
         #endregion Public methods
