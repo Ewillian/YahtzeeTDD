@@ -533,6 +533,25 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(50, actual);
         }
 
+        [Theory]
+        [InlineData(1, 1, 1, 1, 6)]
+        [InlineData(2, 2, 2, 5, 6)]
+        [InlineData(3, 3, 4, 2, 1)]
+        [InlineData(1, 3, 6, 4, 6)]
+        public void Should_Not_Add_Values_Yahtzee(int firstValue, int secondValue, int thirdValue, int fourthValue, int fithValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { firstValue, secondValue, thirdValue, fourthValue, fithValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Yahtzee();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion Yahtzee
     }
 }
