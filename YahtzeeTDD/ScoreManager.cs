@@ -77,7 +77,25 @@ namespace YahtzeeTDD
 
         public int LargeStraight()
         {
-            return 40;
+            var combinationList = new List<List<int>>
+            {
+                new List<int> { 1, 2, 3, 4, 5 },
+                new List<int> { 2, 3, 4, 5, 6 }
+            };
+
+            DicesValues.Sort();
+
+            foreach (var combinations in combinationList)
+            {
+                var count = combinations.Count(w => DicesValues.Contains(w));
+
+                if (count == 5)
+                {
+                    return 40;
+                }
+            }
+
+            return 0;
         }
 
         #endregion Public methods
