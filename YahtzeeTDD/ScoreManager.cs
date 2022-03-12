@@ -130,7 +130,7 @@ namespace YahtzeeTDD
 
         public int Sum()
         {
-            throw new NotImplementedException();
+            return DicesValues.Sum();
         }
     }
 }

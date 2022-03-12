@@ -503,7 +503,7 @@ namespace YahtzeeTDD.Tests
             var actual = scoreManager.Sum();
 
             // Assert
-            Assert.Equal(0, actual);
+            Assert.Equal(expected, actual);
         }
     }
 }
