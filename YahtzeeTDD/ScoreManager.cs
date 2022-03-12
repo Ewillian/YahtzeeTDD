@@ -62,14 +62,9 @@ namespace YahtzeeTDD
 
             DicesValues.Sort();
 
-            foreach (var combinations in combinationList)
+            if (Straight(combinationList, 4))
             {
-                var count = combinations.Count(w => DicesValues.Contains(w));
-
-                if (count == 4)
-                {
-                    return 30;
-                }
+                return 30;
             }
 
             return 0;
@@ -85,17 +80,29 @@ namespace YahtzeeTDD
 
             DicesValues.Sort();
 
+            if (Straight(combinationList, 5))
+            {
+                return 40;
+            }
+
+            return 0;
+        }
+
+        private bool Straight(List<List<int>> combinationList, int expectCount)
+        {
             foreach (var combinations in combinationList)
             {
                 var count = combinations.Count(w => DicesValues.Contains(w));
 
-                if (count == 5)
+                if (count == expectCount)
                 {
-                    return 40;
+                    {
+                        return true;
+                    }
                 }
             }
 
-            return 0;
+            return false;
         }
 
         #endregion Public methods
