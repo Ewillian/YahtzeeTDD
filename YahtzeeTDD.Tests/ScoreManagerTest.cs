@@ -452,6 +452,23 @@ namespace YahtzeeTDD.Tests
         }
 
         [Theory]
+        [InlineData(1, 2, 3, 4, 5)]
+        [InlineData(2, 3, 4, 5, 6)]
+        public void Should_Add_Values_Large_Straight_Mix_Position(int firstValue, int secondValue, int thirdValue, int fourthValue, int fithValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> {secondValue, firstValue,fourthValue, thirdValue, fithValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.LargeStraight();
+
+            // Assert
+            Assert.Equal(40, actual);
+        }
+
+        [Theory]
         [InlineData(1, 2, 3, 4, 6)]
         [InlineData(2, 3, 3, 5, 6)]
         [InlineData(1, 2, 3, 2, 1)]
@@ -471,5 +488,22 @@ namespace YahtzeeTDD.Tests
         }
 
         #endregion LargeStraight
+
+        [Fact]
+        public void Should_Add_Values_Luck()
+        {
+            // Arrange
+            var dicesValues = new List<int> { 3, 5, 6, 2, 3 };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            var expected = dicesValues.Sum();
+
+            // Act
+            var actual = scoreManager.Sum();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
     }
 }

@@ -127,5 +127,10 @@ namespace YahtzeeTDD
         }
 
         #endregion Private methods
+
+        public int Sum()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
