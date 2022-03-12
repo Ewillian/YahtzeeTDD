@@ -112,7 +112,19 @@ namespace YahtzeeTDD
 
         public int Yahtzee()
         {
-            return 50;
+            for (var i = 1; i < 7; i++)
+            {
+                var count = DicesValues.Where(temp => temp.Equals(i))
+                    .Select(temp => temp)
+                    .Count();
+
+                if (count == 5)
+                {
+                    return 50;
+                }
+            }
+
+            return 0;
         }
 
         #endregion Public methods
