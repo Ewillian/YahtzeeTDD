@@ -77,7 +77,7 @@ namespace YahtzeeTDD
 
         public int LargeStraight()
         {
-            throw new NotImplementedException();
+            return 40;
         }
 
         #endregion Public methods
