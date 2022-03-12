@@ -451,6 +451,25 @@ namespace YahtzeeTDD.Tests
             Assert.Equal(40, actual);
         }
 
+        [Theory]
+        [InlineData(1, 2, 3, 4, 6)]
+        [InlineData(2, 3, 3, 5, 6)]
+        [InlineData(1, 2, 3, 2, 1)]
+        [InlineData(1, 3, 6, 4, 6)]
+        public void Should_Not_Add_Values_Large_Straight(int firstValue, int secondValue, int thirdValue, int fourthValue, int fithValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { firstValue, secondValue, thirdValue, fourthValue, fithValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.LargeStraight();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
         #endregion LargeStraight
     }
 }
