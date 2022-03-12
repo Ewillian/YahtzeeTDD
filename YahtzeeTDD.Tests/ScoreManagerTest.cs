@@ -489,6 +489,8 @@ namespace YahtzeeTDD.Tests
 
         #endregion LargeStraight
 
+        #region Luck
+
         [Fact]
         public void Should_Add_Values_Luck()
         {
@@ -505,5 +507,32 @@ namespace YahtzeeTDD.Tests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        #endregion Luck
+
+        #region Yahtzee
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        [InlineData(5)]
+        [InlineData(6)]
+        public void Should_Add_Values_Yahtzee(int diceValue)
+        {
+            // Arrange
+            var dicesValues = new List<int> { diceValue, diceValue, diceValue, diceValue, diceValue };
+
+            var scoreManager = new ScoreManager(dicesValues);
+
+            // Act
+            var actual = scoreManager.Yahtzee();
+
+            // Assert
+            Assert.Equal(50, actual);
+        }
+
+        #endregion Yahtzee
     }
 }

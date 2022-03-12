@@ -105,9 +105,14 @@ namespace YahtzeeTDD
             return false;
         }
 
-        public int Sum()
+        public int Luck()
         {
             return DicesValues.Sum();
+        }
+
+        public int Yahtzee()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion Public methods
