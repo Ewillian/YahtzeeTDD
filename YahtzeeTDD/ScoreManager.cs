@@ -105,6 +105,11 @@ namespace YahtzeeTDD
             return false;
         }
 
+        public int Sum()
+        {
+            return DicesValues.Sum();
+        }
+
         #endregion Public methods
 
         #region Private methods
@@ -127,10 +132,5 @@ namespace YahtzeeTDD
         }
 
         #endregion Private methods
-
-        public int Sum()
-        {
-            return DicesValues.Sum();
-        }
     }
 }

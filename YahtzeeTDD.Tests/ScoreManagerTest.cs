@@ -500,7 +500,7 @@ namespace YahtzeeTDD.Tests
             var expected = dicesValues.Sum();
 
             // Act
-            var actual = scoreManager.Sum();
+            var actual = scoreManager.Luck();
 
             // Assert
             Assert.Equal(expected, actual);
