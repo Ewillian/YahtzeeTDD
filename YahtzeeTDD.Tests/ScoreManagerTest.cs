@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+
 using Xunit;
 
 namespace YahtzeeTDD.Tests
@@ -527,7 +528,7 @@ namespace YahtzeeTDD.Tests
             var scoreManager = new ScoreManager(dicesValues);
 
             // Act
-            var actual = scoreManager.Yahtzee();
+            var actual = scoreManager.OfAKind(5);
 
             // Assert
             Assert.Equal(50, actual);
@@ -546,7 +547,7 @@ namespace YahtzeeTDD.Tests
             var scoreManager = new ScoreManager(dicesValues);
 
             // Act
-            var actual = scoreManager.Yahtzee();
+            var actual = scoreManager.OfAKind(5);
 
             // Assert
             Assert.Equal(0, actual);

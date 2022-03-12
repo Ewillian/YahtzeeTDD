@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace YahtzeeTDD
@@ -32,6 +31,11 @@ namespace YahtzeeTDD
                     .Select(temp => temp)
                     .Count();
 
+                if (ofAKindNumber == 5 && count == 5)
+                {
+                    return 50;
+                }
+
                 if (count >= ofAKindNumber)
                 {
                     return DicesValues.Sum();
@@ -62,12 +66,7 @@ namespace YahtzeeTDD
 
             DicesValues.Sort();
 
-            if (Straight(combinationList, 4))
-            {
-                return 30;
-            }
-
-            return 0;
+            return Straight(combinationList, 4) ? 30 : 0;
         }
 
         public int LargeStraight()
@@ -80,51 +79,17 @@ namespace YahtzeeTDD
 
             DicesValues.Sort();
 
-            if (Straight(combinationList, 5))
-            {
-                return 40;
-            }
-
-            return 0;
+            return Straight(combinationList, 5) ? 40 : 0;
         }
 
-        private bool Straight(List<List<int>> combinationList, int expectCount)
+        private bool Straight(IEnumerable<List<int>> combinationList, int expectCount)
         {
-            foreach (var combinations in combinationList)
-            {
-                var count = combinations.Count(w => DicesValues.Contains(w));
-
-                if (count == expectCount)
-                {
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return combinationList.Select(combinations => combinations.Count(w => DicesValues.Contains(w))).Any(count => count == expectCount);
         }
 
         public int Luck()
         {
             return DicesValues.Sum();
-        }
-
-        public int Yahtzee()
-        {
-            for (var i = 1; i < 7; i++)
-            {
-                var count = DicesValues.Where(temp => temp.Equals(i))
-                    .Select(temp => temp)
-                    .Count();
-
-                if (count == 5)
-                {
-                    return 50;
-                }
-            }
-
-            return 0;
         }
 
         #endregion Public methods
