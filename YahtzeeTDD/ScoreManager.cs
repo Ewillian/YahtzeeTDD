@@ -75,6 +75,11 @@ namespace YahtzeeTDD
             return 0;
         }
 
+        public int LargeStraight()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion Public methods
 
         #region Private methods
